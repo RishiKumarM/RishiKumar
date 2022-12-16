@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,transparent,skyblue);
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;   
+  }
+  .in-containter{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+  }
+  .in-containter1{
+    width: 50%;
+    height: 100vh;
+    background-color: black;
+    float: left;
+  }
+  .logo{
+    height: 20%;
+    width: 20%;
+  }
+  .logo img{
+    height: 100%;
+    width: 100%;
+  }
+  .form{
+    height: 70vh;
+    width: 80%;
+    background-color: white;
+    border-radius: 5%;
+    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .heading{
+    height: 9vh;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .heading h1{
+    font-size: 3vw;
+    margin: 1pc;
+  }
+  .form-content{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    margin-top: -6%;
+  }
+
+  .in-containter2{
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin: auto;
+  }
+  .in-containter2 img{
+    margin-top: 2.5pc;
+    height: 90%;
+    width: 90%;
+    border-radius: 1rem;
+    position: relative;
+  }
+
+
+  /* Dunny data */
+
+  .container12{ 
+    width:50%;
+    align-items: center;
+    margin-left:20%;
+  }
+
+  form #Individual{
+    width: 120%;
+    height: 7%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 1.2pc;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+  }
+  .error{
+    color:red;
+    }

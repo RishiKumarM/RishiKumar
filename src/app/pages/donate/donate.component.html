@@ -1,0 +1,69 @@
+~<div class="container">
+  <div class="in-containter" data-density="hard">
+    <div class="in-containter1">
+      <div class="logo"><img src="assets/k4help.jpg" alt="logo" routerLink="/home"></div>
+      <div class="moving">
+        <marquee>
+          Moving Text
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#160; &#160;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          Moving Text
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#160; &#160;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          Moving Text
+        </marquee>
+      </div>
+      <div class="main">
+        <h2>Donate Now </h2>
+        <form class="form" [formGroup]="donateTypeForm" (submit)="onSubmit()"  >
+
+          <div class="donateFormVisible"> 
+            <div class="name">
+              <label for="" class="nm">Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Name" formControlName="name" required>
+              <span class="text-muted" *ngIf="!form.controls['name'].valid && form.controls['name']?.touched"> Please
+                Enter Your Name</span>
+            </div>
+            <br>
+            <div class="email">
+              <label for="" class="em">Email</label>
+              <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email" required>
+              <span class="text-muted" *ngIf="!form.controls['email'].valid && form.controls['name']?.touched"> Please
+                Enter Your Email</span>
+            </div>
+            <br>
+            <div class="amount">
+              <label for="" class="am">Amount</label>
+              <input type="text" id="amount" class="form-control"  placeholder="100Rs" formControlName="email" required>
+              <span class="text-muted" *ngIf="!form.controls['email'].valid && form.controls['name']?.touched"> Please
+                Enter Amount</span>
+            </div>
+            <br>
+            <div class="frequency">
+              <label for="" class="fr">Frequency</label>
+              <select id="frequency" name="frequency">
+                <option value="ps">Monthly</option>
+                <option value="ps">Quartly</option>
+                <option value="ps">Yearly</option>
+              </select>
+            </div>
+            <br>
+            <div class="purpose">
+              <label for="" class="pr">Select the purpose</label>
+              <select id="Purpose" name="select your purpose">
+                <option  value="" disabled selected>purpose</option>
+                <option *ngFor="let purpose of purposes" [value]="">{{purpose.options}}</option>
+              </select>
+            </div>
+            <br>
+            <button class="btn">Next</button>
+          </div>
+          <div class="do-img">
+            <img src="assets/donate.jpg" rel="image">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader> 

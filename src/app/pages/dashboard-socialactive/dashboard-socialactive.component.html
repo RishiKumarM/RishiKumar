@@ -1,0 +1,456 @@
+<div class="container">
+    <div class="sidenav">
+      <div id="camp-profile" class="buttons">
+        <button (click)="onClickWorkingArea()">ADD YOUR WORKING AREA</button>
+    </div>
+        <div id="camp-profile" class="buttons">
+            <button (click)="onClickProfileCamp()">PROFILE/CAMPAIGNER</button>
+        </div>
+        <div id="donations" class="buttons">
+            <button (click)="onClickDonation()">DONATION</button>
+        </div>
+        <div id="manageBanner" class="buttons">
+            <button (click)="onClickManageBanner()">MANAGE BANNER</button>
+        </div>
+        <div id="myCampaign" class="buttons">
+            <button (click)="onclickmyCampaign()">MY CAMPAIGN</button>
+        </div>
+        <div id="accountDetail" class="buttons">
+            <button (click)="onClickAccountDetail()">ACCOUNT DETAIL</button>
+        </div>
+        <div id="patientdetail" class="buttons">
+            <button (click)="onClickPatientDetail()">PATIENT Detail</button>
+        </div>
+        <div id="patientdocs" class="buttons">
+            <button (click)="onClickPatientDocument()">PATIENT DOCUMENTS</button>
+        </div>
+        <div id="story" class="buttons">
+            <button (click)="onClickStory()">STORY</button>
+        </div>
+   
+        <div id="updates" class="buttons">
+            <button (click)="onClickupdates()" >UPDATES</button>
+        </div>
+   
+        <div id="plans" class="buttons">
+            <button (click)="onClickplans()">PLANS</button>
+        </div>
+   
+        <div id="fundTarget" class="buttons">
+            <button (click)="onClickfunds()">FUND TARGET</button>
+        </div>
+        <div id="listofDonors" class="buttons">
+            <button (click)="onClickDonor()">LIST OF DONOR</button>
+        </div>
+        <div id="listOfDonation" class="buttons">
+            <button (click)="onClickListofDonations()">LIST OF DONATION</button>
+        </div>
+        <div id="campaignPage" class="buttons">
+            <button routerLink="/cmpPage">CAMPAIGN PAGE</button>
+        </div>
+        <div id="logout" class="buttons">
+            <button>LOGOUT</button>
+        </div>
+ </div>
+
+
+
+  
+    <!-- ___________________Social Activist working area_____________________________________________________________________  -->
+    <div class="story" *ngIf="isNameSelectedWorkingArea" [formGroup]="textBoxSocialActivist">
+        <div class="storyTextBox">
+            <textarea formControlName="description">text in box</textarea>
+        </div>
+        <div class="storySubmitbtn">
+            <button (click)="onSubmit()">Submit</button>
+        </div>
+       </div>
+
+   <!-- _________________________profileCampaigner__________________________________________________________  -->
+
+
+     <div class="form-detail" *ngIf="isNameSelectedformDetail">
+        <div class="border">
+        <div id="circle">
+            <p>Kind4help</p>
+        </div>
+            <table class="table" id="dataVerify">
+                <thead>
+                    <div class="detail-1">
+                        <label for="mail">Email</label>
+                       <li  id="phone">
+                        <span>&#10003;</span> 
+                        <span>&#10060;</span> 
+                        </li>
+                       <label for="phone">Phone no.</label>
+                       <li>
+                        <span>&#10003;</span> 
+                        <span>&#10060;</span> 
+                        </li>
+                       
+                       <label for="pan">Pan no. </label>
+                       <li>
+                        <span>&#10003;</span>
+                         <span>&#10060;</span>
+                       </li> 
+                       
+                    </div>
+                </thead>
+            </table>
+      
+        <div class="detail-2">
+            <label for="name">Name</label>
+            <li>
+                <span>&#10003;</span> 
+                <span>&#10060;</span> 
+            </li>
+            <label for="dob">Date of birth</label>
+            <li> 
+                 <span>&#10003;</span> 
+                 <span>&#10060;</span>
+            </li>
+            <label for="adhar">Aadhar</label>
+                    <li> 
+                 <span>&#10003;</span> 
+                 <span>&#10060;</span>
+            </li>
+        </div>
+        </div>
+        <div class="links">
+            <input type="text" placeholder="paste your fb profile">
+            <input type="text" placeholder="paste your insta profile">
+            <input type="text" placeholder="paste your linkdin profile">
+        </div>
+      
+      
+         <div class="u-detail">
+        <div class="pan">
+            <input type="text" formControlName="pan" placeholder="Enter your Pan Number">
+            <button>Submit Now</button>
+          </div>
+          <div class="adhar">
+            <input type="text" formControlName="aadhaar" placeholder="Enter your Adhar Number">
+            <button>Submit Now</button>
+          </div>
+        </div>
+    </div>
+         <!-- _____________________donation__________________________________________________________________ -->
+       <div class="detailDonation" *ngIf="isNameSelectedDonationDetail">
+            <input type="text" placeholder="How Much Donation Demand"> 
+            <button> Next</button>
+            <button id="DonationDetailSubmitButton">Submit</button>
+            <div class="donationData">
+                <div class="DonationBox">
+                    sno
+                    <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    c.id
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    c.name
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    phone.no
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    amount
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    latest contribution date
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    cause category
+                      <span>abc</span>
+                </div>
+                <div class="DonationBox">
+                    city
+                </div>
+                <div class="DonationBox">
+                    country
+                </div>
+            </div>
+        </div>
+        <!-- _________Manage Banner______________________________________________________________________________  -->
+        <div class="manageBanner" *ngIf="isNameSelectedManageBanner">
+                 
+            <div class="bannerData">
+                <div class="bannerBox">
+                    sno
+                    <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    c.id
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    c.name
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    cause category
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    collected amount
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    withdrawl Amount
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    require amount
+                      <span>abc</span>
+                </div>
+                <div class="bannerBox">
+                    S.plans
+                </div>
+            </div>
+        </div>
+  <!-- ________________________my Campaign_________________________________________________________________        -->
+        <div class="myCampaign" *ngIf="isNameSelectedmyCampaign">
+           
+            <div class="campaignData">
+                <div class="campaignBox">
+                    sno
+                </div>
+                <div class="campaignBox">
+                    c.id
+                </div>
+                <div class="campaignBox">
+                    C.Name
+                </div>
+                <div class="campaignBox">
+                    image/video
+                </div>
+            </div>
+            <div class="uploadbtn">
+                <input type="file" placeholder="upload">
+            </div>
+        </div>
+<!-- _____________________My Account Detail______________________________________________________________________  -->
+<div class="myAccountDetail" *ngIf="isNameSelectedAccountDetail">
+    <div class="addAccountbtn">
+        <button>Add a/c</button>
+    </div>
+    <div class="accData">
+        <div class="accBox">
+            sno
+        </div>
+        <div class="accBox">
+            c.id
+        </div>
+        <div class="accBox">
+            C.Name
+        </div>
+        <div class="accBox">
+            cause category
+        </div>
+        <div class="accBox">
+            benificiary Name
+        </div>
+        <div class="accBox">
+            bank name
+        </div>
+        <div class="accBox">
+            Account detail
+        </div>
+        <div class="accBox">
+            IFSC code
+        </div>
+        <div class="accBox">
+            <h3>Action</h3>
+        </div>
+    </div>
+</div>
+<!-- ____________________________patient detail__________________________________________________________________  -->
+<div class="patientDetail" *ngIf="isNameSelectedpatientDetail">
+
+    <div class="docdetailData">
+        <div class="docDetail">
+            sno
+        </div>
+        <div class="docDetail">
+            c.id
+        </div>
+        <div class="docDetail">
+            p.name
+        </div>
+        <div class="docDetail">
+            location
+        </div>
+        <div class="docDetail">
+            cause category
+        </div>
+        <div class="docDetail">
+            Account detail
+        </div>
+        <div class="docDetail">
+            medical docs
+        </div>
+        <div class="docDetail">
+            <h3>Action</h3>
+        </div>
+    </div>
+  </div>
+<!-- _____________________patient Document__________________________________________________________________________  -->
+<div class="patientDocument" *ngIf="isNameSelectedPatientDocument">
+    <div class="docdetailData">
+        <div class="docDetail">
+            sno
+        </div>
+        <div class="docDetail">
+            c.id
+        </div>
+        <div class="docDetail">
+            p.name
+        </div>
+        <div class="docDetail">
+            cause Category
+        </div>
+        <div class="docDetail">
+            upload document
+        </div>
+        <div class="docDetail">
+            View sub. docs
+        </div>
+    </div>
+ </div>
+<!-- _____________________Story__________________________________________________________________________  -->
+<div class="story" *ngIf="isNameSelectedStory">
+    <div class="storyData">
+        <div class="storyDetail">
+            sno
+        </div>
+        <div class="storyDetail">
+            c.id
+        </div>
+        <div class="storyDetail">
+            c. name
+        </div>
+        <div class="storyDetail">
+            story
+        </div>
+        
+    </div>
+    <div class="storybtn">
+        <button>add</button>
+    </div>
+    <div class="storyTextBox">
+        <textarea>text in box</textarea>
+    </div>
+    <div class="storySubmitbtn">
+        <button>Submit</button>
+    </div>
+   
+ </div>
+<!-- _____________________updates__________________________________________________________________________  -->
+<div class="updates" *ngIf="isNameSelectedUpdates">
+    <div class="storyData">
+        <div class="storyDetail">
+            sno
+        </div>
+        <div class="storyDetail">
+            c.id
+        </div>
+        <div class="storyDetail">
+            c. name
+        </div>
+        <div class="storyDetail">
+            story
+        </div>
+        
+    </div>
+    <div class="storybtn">
+        <button>Updates</button>
+    </div>
+    <div class="storyTextBox">
+        <textarea>text in box</textarea>
+    </div>
+    <div class="storySubmitbtn">
+        <button>Submit</button>
+    </div>
+  </div>
+  <!-- _____________________plans_________________________________________________________________________  -->
+<div class="plans" *ngIf="isNameSelectedplans">
+    <div class="plansDetail">
+        <div class="plan1"></div>
+        <div class="plan2"></div>
+        <div class="plan3"></div>
+
+    </div>
+  </div>
+  <!-- _____________________fund Target_________________________________________________________________________  -->
+<div class="funds" *ngIf="isNameSelectedFund">
+    <div class="funddetailData">
+        <div class="fundDetail">
+            sno
+        </div>
+        <div class="fundDetail">
+            c.id
+        </div>
+        <div class="fundDetail">
+            c.name
+        </div>
+        <div class="fundDetail">
+            cause Category
+        </div>
+        <div class="fundDetail">
+            collected amount
+        </div>
+        <div class="fundDetail">
+            required amount
+        </div>
+        <div class="fundDetail">
+            Last Date
+        </div>
+        <div class="fundDetail">
+            Plan
+        </div>
+    </div>
+  </div>
+   <!-- _____________________List of Donor________________________________________________________________________  -->
+<div class="Donor" *ngIf="isNameSelectedDonor">
+    <div class="DonorData">
+        <div class="DonorDetail">
+            sno
+        </div>
+        <div class="DonorDetail">
+            c.id
+        </div>
+        <div class="DonorDetail">
+            Donor id
+        </div>
+        <div class="DonorDetail">
+            Amount
+        </div>
+        <div class="DonorDetail">
+            Date
+        </div>
+        
+    </div>
+  </div>
+    <!-- _____________________List of Donation________________________________________________________________________  -->
+<div class="Donation" *ngIf="isNameSelectedDonation">
+    <div class="DonationData">
+        <div class="DonationDetail">
+            sno
+        </div>
+        <div class="DonationDetail">
+            c.id
+        </div>
+        <div class="DonationDetail">
+            Amount
+        </div>
+        <div class="DonationDetail">
+            Date
+        </div>   
+    </div>
+  </div>
+ </div>

@@ -1,0 +1,53 @@
+<div class="container">
+      <div class="logo">
+        <img src="assets/k4help.jpg" alt="logo" routerLink="/home">
+      </div>
+      <div class="moving">
+        <marquee>  
+         Moving Text 
+         &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &#160; &#160;
+         &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+          Moving Text 
+        &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &#160; &#160;
+         &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+          Moving Text
+          </marquee>
+      </div>
+
+        <form class="form" >
+          <h2>Monthly Help</h2>
+          <div class="left">
+            <div class="nam">
+              <label from="Name" id="mynm">Name</label>
+              <input type="text" id="Name" formControlName="name">
+            </div>
+            <br>
+            <div class="mail">
+              <label from="Email" id="mymail">Email</label>
+              <input type="email" id="Email" formControlName="email" >
+            </div>
+            <br>
+            <div class="am">
+              <label from="Amount" id="myam">Amount</label>
+              <input id="Amount" name="amount" placeholder="100RS"/>
+            </div>
+            <br>
+            <div class="pur">
+              <label from="select your purpose" id="mypup">Select the purpose</label>
+              <select id="Purpose" name="select your purpose">
+                <option selected disabled value="ps">purpose</option>
+                <option *ngFor="let purpose of purposes" [value]="purpose.purpose">{{purpose.purpose}}</option>
+              </select>
+
+              <button class="btn">Next</button>
+
+            </div>
+
+            <div class="right">
+              <img src="assets/old-family.jpg" rel="image">
+              
+            </div>
+            </div>
+          </form>
+        </div>
+        <app-loader></app-loader> 

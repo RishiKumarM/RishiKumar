@@ -1,0 +1,841 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+.container{
+  height:98vh;
+  width:100%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  display: flex;
+}
+.hamburger{
+  position: absolute;
+  height:6vh;
+  width:10%;
+  top:6.5%;
+  border-radius: 20px;
+  background-color: azure;
+  left:2%;
+  transition: 0.3s ease-in-out;
+}
+.hamburger button{
+  width:100%;
+  height:6vh;
+  top:6.5%;
+  border-radius: 20px;
+  background-color: azure;
+}
+.hamburger :hover{
+  width:100%;
+}
+.sidenav{
+  height:80vh;
+  width:17%;
+  background-color: azure;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  position: relative;
+  top:12%;
+  left:2%;
+}
+.sidenav select{
+  outline:none;
+  border:none;
+  width:100%;
+  height:7%;
+  border-radius: 10px;
+  background-color: azure;
+  font-weight: bold;
+}
+.sidenav select:hover{
+  background-color: rgb(237, 235, 112);
+  transition: 1s;
+}
+.sidenav select option{
+  transition: 1s;
+  text-align: center;
+}
+.buttons{
+  height:4.5vh;
+  width:30vw;
+  margin-top:1.5%;
+
+}
+.buttons button:focus{
+  background-color:rgb(245, 239, 69);
+  border: 2px solid rgb(131, 138, 12);
+  box-shadow: 0px 0px 0px 1px rgb(234, 213, 27);
+}
+@keyframes anim-shadow{
+  100%{
+    box-shadow: 0px 0px 50px 20px rgba(112,111,211,0);
+  }
+}
+.buttons button{
+  height:5vh;
+  width:100%;
+  position: absolute;
+  border: none;
+  background-color: azure;
+  font-weight: bold;
+}
+.buttons button:hover{
+  background-color: rgb(208, 205, 49);
+  transition: 2s;
+}
+
+
+.donation{
+height:10vh;
+width:60%;
+background-color: azure;
+position: absolute;
+left:33%;
+top:12%;
+border-radius: 18px;
+display: flex;
+}
+.donation button{
+background-color: black;
+color:white;
+height:7vh;
+border-radius: 15px;
+font-weight: bold;
+font-size: 15px;
+}
+.donor-btn{
+position: relative;
+left:8%;
+top:15%;
+width:25%;
+
+}
+.donation-btn{
+position: relative;
+left:30%;
+top:15%;
+width:35%;
+
+}
+
+/* this is form  */
+
+
+.form{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+
+.workingArea{
+  height:65vh;
+  width:90%;
+  background-color: aqua;
+  position: absolute;
+  top:5%;
+  left:5%;
+  border-radius: 15px;
+}
+.profileTextbox{
+  height:33vh;
+  width:90%;
+  background-color: rgb(80, 93, 207);
+  position: absolute;
+  top:5%;
+  left:5%;
+  border-radius: 15px;
+}
+.profileTextbox textarea{
+  height:25vh;
+  width:100%;
+  position: absolute;
+  border-radius: 10px;
+}
+.profileTextbox button{ 
+  height:6vh;
+  width:18%;
+  background-color: rgb(203, 169, 31);
+  position: absolute;
+  top:80%;
+  left:80%;
+  border-radius: 10px;
+}
+.CorpDocs{
+  position: absolute;
+  top:60%;
+  left:10%;
+  background-color: aquamarine;
+  height:3vh;
+  width:90%;
+}
+.CorpDocs .benifit{
+  padding-right:40%;
+}
+.TaxcorpDocument{
+  height:16vh;
+  position: absolute;
+  width:90%;
+  background-color: blanchedalmond;
+  top:70%;
+  left:5%;
+}
+.tax select{
+  position: absolute;
+  left:3%;
+  height:3vh;
+  width:30%;
+}
+.tax option:hover{
+  background-color: rgb(184, 115, 115);
+}
+.medical input{
+  position: absolute;
+  top:0;
+  left:70%;
+}
+/* _____________________________________________________________________________ */
+.profileofCampanigner{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.border{
+  border:1px solid black;
+  height:50vh;
+  width: 95%;
+  position: absolute;
+  left:2%;
+  top:2%;
+  border-radius: 10px;
+}
+.textDetailShow{
+  height:30vh;
+  width:80%;
+  background-color: aquamarine;
+  position: absolute;
+  top:15%;
+  left:10%;
+  border-radius: 10px;
+}
+.underReview{
+  height:5vh;
+  width:15%;
+  background-color: antiquewhite;
+  position: absolute;
+  top:63%;
+  left:73%;
+  border-radius: 10px;
+}
+.reviewDocs{
+  position: absolute;
+  top:73%;
+  left:10%;
+  background-color: aquamarine;
+  height:3vh;
+  width:80%;
+}
+.reviewDocs .benifitShow{
+  padding-right:40%;
+}
+
+#circle {
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  left:3%;
+  top:2%;
+  color: azure;
+  text-align:justify;
+/* ____________________form Detail___________________________________________________________________________ */
+}
+#circle p{
+position: absolute;
+top:34%;
+left:10%;
+}
+.form-detail{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+  
+}
+.veriEnterInput{
+  position: relative;
+  top:2vh;
+  left:10%;
+}
+.veriEnterInput input{
+  width: 70%;
+  height: 7vh;
+  position: relative;
+  left:5%;
+  top:10%;
+  border-radius: 15px;
+  text-align:center;
+
+}
+.veriEnterInput textarea{
+  width: 70%;
+  height: 7vh;
+  position: relative;
+  left:5%;
+  top:10%;
+  border-radius: 15px;
+  text-align:center;
+
+}
+.inputButton{
+  height:5vh;
+  width:100%;
+  background-color: aquamarine;
+  display:flex;
+}
+.popup{
+  position: relative;
+  z-index: 1;
+}
+.inputButton button{
+position: absolute;
+right:50%;
+top:10vh;
+border-radius: 10px;
+}
+#edit{
+position: absolute;
+left:70%;
+height:5vh;
+width:10%;
+}
+#next{
+  position: absolute;
+  left:80%;
+  height:5vh;
+  width:10%;
+}
+
+.detail-1{
+  height:34vh;
+  width:35%;
+  background-color: rgb(235, 235, 235);
+  position: absolute;
+  border-radius: 10px;
+  top:27%;
+  left:3%;
+  /* border: 2px solid black; */
+}
+.detail-1 span{
+  position: relative;
+  left:40%;
+}
+span{
+  font-weight:bold;
+}
+.detail-1 label{
+font-weight: bold;
+position: relative;
+top:2%;
+left:5%
+}
+.detail-1 li{
+  display: block;
+  top:4%;
+  height:15%;
+  width: 80%;
+  left:5%;
+  position: relative;
+  margin:10px;
+}
+
+.detail-2{
+  height:34vh;
+  width:35%;
+  background-color: rgb(235, 235, 235);
+  position: absolute;
+  border-radius: 10px;
+  left:58%;
+  /* border: 2px solid black; */
+  top:20%;
+}
+.detail-2 label{
+  font-weight: bold;
+  position: relative;
+  top:8%;
+  left:3%
+  }
+  .detail-2 li{
+    display: block;
+    top:10%;
+    height:15%;
+    width: 80%;
+    left:5%;
+    position: relative;
+  }
+  .detail-2 span{
+   position: relative;
+   left:50%;
+  }
+
+
+.u-detail{
+  left:25%;
+  top:73%;
+  /* background-color: aqua; */
+  height:17vh;
+  width:70%;
+  position:relative;
+
+  /* border: 2px solid black; */
+}
+.pan input{
+  height:5vh;
+  width:50%;
+  position: relative;
+  margin:10px;
+  border-radius: 10px;
+  border:1px solid black;
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+}
+.adhar input{
+  position:relative;
+  height:5vh;
+  width:50%;
+  margin:10px;
+  border-radius: 10px;
+  border:1px solid black;
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+}
+.pan button{
+  height:5vh;
+  border-radius: 10px;
+  background-color: black;
+  color:white;
+  width:20%;
+  font-weight: bold;
+}
+.adhar button{
+  height:5vh;
+  border-radius: 10px;
+  background-color: black;
+  color:white;
+  width:20%;
+  font-weight: bold;
+}
+
+/* _____________________________________________________________________________________________ */
+.detailDonation{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.detailDonation input{
+  height:6vh;
+  width:70%;
+ position: absolute;
+ left:10%;
+ top:5%;
+ border-radius: 10px;
+ text-align: center;
+}
+.detailDonation button{
+  height:6vh;
+  width:10%;
+ position: absolute;
+ left:70%;
+ top:16%;
+ border-radius: 10px;
+ text-align: center;
+}
+ #DonationDetailSubmitButton{
+  height:6vh;
+  width:13%;
+ position: absolute;
+ left:83%;
+ top:25%;
+ border-radius: 10px;
+ text-align: center;
+ background-color: orange;
+}
+.donationData{
+  display: flex;
+  height:30vh;
+  width:100%;
+  background-color: rgb(190, 190, 190);
+  position: absolute;
+  top:35%;
+}
+.thead-dark th{
+  border:1px solid black;
+}
+tbody td{
+  border:1px solid black;
+}
+.DonationBox span{
+  display: block;
+  height:3vh;
+  border:1px solid black;
+  width:3%;
+  margin-left:3%;
+  position: relative;
+}
+/* ______________________________manage banner_______________________________________________________________ */
+
+.manageBanner{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.bannerData{
+  display: flex;
+  height:20vh;
+  width:100%;
+  background-color: aqua;
+  position: absolute;
+  top:10%;
+}
+.bannerBox{
+  display: inline;
+  height:20vh;
+  border:1px solid black;
+  width:7%;
+  margin-left:2%;
+  position: relative;
+}
+/* _____________________________my campaign_______________________________________________________________ */
+.myCampaign{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.campaignData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:10%;
+}
+.campaignBox{
+  margin-left:15%;
+}
+.uploadbtn{
+  position: absolute;
+  left:70%;
+  top:20%;
+}
+/* _________________________Account Detail_________________________________________________________________________  */
+.myAccountDetail{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.addAccountbtn button{
+  top:10%;
+  left:80%;
+  position: absolute;
+  height:5vh;
+  width:13%;
+  background-color: orange;
+  border-radius: 10px;
+}
+.accData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:30%;
+}
+.accData h3{
+ background-color: orange;
+ position: absolute;
+ left:83%;
+ width:10vw;
+ text-align: center;
+}
+.accBox{
+  margin-left:2%;
+}
+/* _________________________patient Detail_________________________________________________________________________  */
+.patientDetail{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.docdetailData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:30%;
+}
+.docDetail{
+  margin-left: 4%;
+}
+.docDetail h3{
+  background-color: orange;
+  position: absolute;
+  left:83%;
+  width:10vw;
+  text-align: center;
+}
+/* __________________patient Document__________________________________________________________________________ */
+.patientDocument{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+
+/* __________________story__________________________________________________________________________ */
+.story{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.storyData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:10%;
+}
+.storyDetail{
+  margin-left: 16%;
+}
+.storybtn button{
+   height:5vh;
+   position: absolute;
+   top:20%;
+   left:73%;
+   width:10%;
+   background-color: azure;
+   border-radius: 10px;
+   font-weight: bold;
+}
+.storyTextBox{
+  height:40vh;
+   position: absolute;
+   top:30%;
+   left:23%;
+   width:60%;
+   background-color: azure;
+   border-radius: 10px;
+   font-weight: bold;
+}
+.storyTextBox textarea{
+  height:40vh;
+   position: absolute;
+   width:100%;
+   background-color: azure;
+   border-radius: 10px;
+   font-weight: bold;
+}
+.storySubmitbtn button{
+  height:5vh;
+  position: absolute;
+  top:90%;
+  left:73%;
+  width:10%;
+  background-color: azure;
+  border-radius: 10px;
+  font-weight: bold;
+}
+/* __________________updates__________________________________________________________________________ */
+.updates{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+/* ___________________________________plans___________________________________________________________  */
+.plans{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.plansDetail{
+  height:50vh;
+  width:100%;
+  top:5%;
+ position: absolute;
+ background-color: antiquewhite;
+}
+.plan1{
+  height:40vh;
+  width:30%;
+  top:5%;
+  left:3%;
+ position: absolute;
+ background-color: rgb(192, 138, 68);
+ border-radius: 10px;
+}
+.plan2{
+  height:40vh;
+  width:30%;
+  top:5%;
+  left:35%;
+ position: absolute;
+ background-color: rgb(192, 138, 68);
+ border-radius: 10px;
+}
+.plan3{
+  height:40vh;
+  width:30%;
+  top:5%;
+  left:67%;
+ position: absolute;
+ background-color: rgb(192, 138, 68);
+ border-radius: 10px;
+}
+/* __________________________________fund________________________________________________________________ */
+.funds{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.funddetailData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:30%;
+}
+.fundDetail{
+  margin-left:4%;
+}
+/* __________________________________Donor_______________________________________________________________ */
+.Donor{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.DonorData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:30%;
+}
+.DonorDetail{
+  margin-left:12%;
+}
+/* _________________________________________________________________________________________________  */
+.Donation{
+  height:70vh;
+  width:60%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  position: relative;
+  left:16%;
+  top:26%;
+  border-radius: 10px;
+  color:black;
+}
+.DonationData{
+  position: absolute;
+  display: flex;
+  height:5vh;
+  width:100%;
+  background-color: yellow;
+  top:30%;
+}
+.DonationDetail{
+  margin-left:12%;
+}

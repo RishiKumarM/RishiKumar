@@ -1,0 +1,33 @@
+  <div class="container">
+    <img src="assets/don.jpg">
+    <nav class="navbar collapse navbar-collapse">
+      <div class="Logo">
+        <img src="assets/k4help.jpg" alt="logo" height="30px" width="40px">
+      </div>
+  
+      <div class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        <div class="sign">
+          <button id="sign" routerLink="/sign">Sign Up/In</button>
+        </div>   
+        <div class="Donate">
+          <button id="dbutton" routerLink="/donate">Donate</button>
+        </div>
+        <div class="CNC">
+          <button id="cnc" routerLink="/create">Start Campaign</button>
+        </div>
+        <div class="MonthlyHelp">
+          <Button id="monthlyHelp" routerLink="/monthly">Monthly Help</Button>
+        </div>
+        <div class="Cyb">
+          <button id="cyb" routerLink="/birthday">Celebrate Your Birthday</button>
+        </div>
+      </div>
+    </nav>
+  <app-loader></app-loader> 
+<app-home></app-home>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+
+                

@@ -1,0 +1,917 @@
+*{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+height:200vh;
+width:100%;
+position: absolute;
+background-color: rgb(6, 5, 5); 
+}
+.box-1{
+  position:absolute;
+  top:6%;
+  height:45vh;
+  width:100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  text-align: center;
+}
+
+.box-1-1{
+  height:40vh;
+  width:25%;
+  /* background-color: blueviolet; */
+  position: relative;
+  left:2%;
+  top:4%;
+  border-radius: 10%;
+ }
+#f-raised{
+  height:20vh;
+  width:75%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:10%;
+  border-radius: 10px;
+}
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:30%;
+  --size: 5rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+.donateButton{
+  height:30%;
+  width: 90%;
+  /* background-color: aqua; */
+  position: absolute;
+  left:3%;
+  top:60%;
+ 
+}
+.donateButton button{
+  position: relative;
+  display: block;
+  left:10%;
+  width:80%;
+  height:40%;
+  margin-top:10px ;
+  border-radius: 10px;
+}
+
+
+#img-vid{
+height:40vh;
+width:68%;
+background-color: rgb(203, 203, 203);
+position: relative;
+left:4.5%;
+top:4%;
+border-radius: 10px;
+text-align: center;
+color: aliceblue;
+}
+.tax-btn{
+  position: absolute;
+  height:5vh;
+  width:12%;
+  right:85%;
+  top:2%;
+}
+.ur-btn{
+  position: absolute;
+  height:5vh;
+  width:12%;
+  left:85%;
+  top:2%;
+}
+/* 2nd main div start  */
+.box-2{
+  position:absolute;
+  top:28%;
+  height:30vh;
+  width:100%;
+  background-color: rgb(17, 20, 19);
+  display: flex;
+}
+#upi{
+
+  height:26vh;
+  width:30%;
+background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#c-details{
+  height:26vh;
+  width:30%;
+  background-color: rgb(208, 124, 190);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#A-details{
+  height:26vh;
+  width:30%;
+  background-color: rgb(208, 124, 190);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+.box-2 button{
+  position: absolute;
+  left:75%;
+  top:5%;
+}
+#s-btn{
+  background-color: rgb(127, 166, 244);
+  font-weight: bold;
+}
+.btn{
+  background-color: rgb(208, 124, 190);
+  font-weight: bold;
+}
+#c-btn{
+  position: relative;
+  left:70%;
+}
+
+.box-3{
+  position:absolute;
+  top:43%;
+  height:30vh;
+  width:100%;
+  background-color: rgb(17, 20, 19);
+  display: flex;
+}
+#txt-img{
+  height:26vh;
+  width:62%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#top-inf{
+ 
+  height:26vh;
+  width:30%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#top-inf button{
+  position: relative;
+  top:60%;
+  left:7%;
+  height:5vh;
+  width:80%;
+  background-color: rgb(218, 99, 192);
+  border-radius: 10px;
+}
+.box-4{
+    position:absolute;
+    top:58%;
+    height:30vh;
+    width:100%;
+    background-color: rgb(17, 20, 19);
+    display: flex;
+}
+.st{
+  height:60vh;
+  width:83%;
+}
+#story{
+  height:60vh;
+  width:75%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:2%;
+  margin-right: 2%;
+  border-radius: 6px;
+  display: block;
+}
+.cons{
+  height:65vh;
+  width:30%;
+  position: absolute;
+  left:66%;
+  background-color: rgb(14, 15, 15);
+  position: absolute;
+}
+
+#v-donner{
+  height:20vh;
+  width:100%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  left:0;
+  right:10%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#c-value{
+  height:19vh;
+  width:100%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:6%;
+  left:0%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+#l-donners{
+  height:20vh;
+  width:100%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:4%;
+  left:0%;
+  margin-right: 2%;
+  border-radius: 5%;
+}
+.box-5{
+  position:absolute;
+  top:90%;
+  height:35vh;
+  width:100%;
+  background-color: rgb(17, 20, 19);
+  display: flex;
+}
+#img1{
+  height:29vh;
+  width:22%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 5%;
+  left:2%;
+  background-size: cover;
+  background-position: center;
+}
+#img2{
+  height:29vh;
+  width:22%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 5%;
+  left:2%;
+}
+#img3{
+  height:29vh;
+  width:22%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 5%;
+  left:2%;
+}
+#img4{
+  height:29vh;
+  width:22%;
+  background-color: rgb(203, 203, 203);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 5%;
+  left:2%;
+}
+.img{
+  position: relative;
+  top:80%;
+  left:10%;
+  height:14%;
+  width:30%;
+}
+.box-6{
+  position:absolute;
+  top:104%;
+  height:37vh;
+  width:100%;
+  background-color: rgb(17, 20, 19);
+  display: flex;
+}
+
+#d-bank{
+  height:29vh;
+  width:94%;
+  background-color: rgb(156, 156, 156);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 10px;
+  left:2%;
+}
+.box-7{
+  position:absolute;
+  top:95%;
+  height:40vh;
+  width:100%;
+  background-color: rgb(17, 20, 19);
+  display: flex;
+}
+#updates{
+  height:34vh;
+  width:94%;
+  background-color: rgb(156, 156, 156);
+  position: relative;
+  top:5%;
+  margin-right: 2%;
+  border-radius: 10px;
+  left:2%;
+}
+@media only screen and (max-width:300px){
+  .box-1{
+    position:absolute;
+    top:6%;
+    height:45vh;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    font-size: 8px;
+  }
+  .tax-btn{
+    position: absolute;
+    height:4vh;
+    width:30%;
+    right:65%;
+    top:2%;
+    font-size: 10px;
+  }
+  .ur-btn{
+    position: absolute;
+    height:3vh;
+    width:30%;
+    left:65%;
+    top:2%;
+    font-size: 10px;
+  }
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:15%;
+  top:30%;
+  --size: 2rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+ .donateButton{
+    height:30%;
+    width: 90%;
+    /* background-color: aqua; */
+    position: absolute;
+    left:3%;
+    top:55%;
+   
+  }
+  .donateButton button{
+    position: relative;
+    display: block;
+    left:10%;
+    width:80%;
+    height:60%;
+    margin-top:6px ;
+    border-radius: 10px;
+  }
+  .box-2 button{
+    position: absolute;
+    left:45%;
+    top:10%;
+  }
+  #c-btn{
+    position: relative;
+    left:10%;
+  }
+   /* box 5 section  */
+  .img{
+    position: relative;
+    top:80%;
+    left:10%;
+    height:14%;
+    width:70%;
+    font-size: 8px;
+  }
+  #top-inf button{
+    position: relative;
+    top:50%;
+    left:7%;
+    height:5vh;
+    width:80%;
+    background-color: rgb(218, 99, 192);
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (min-width:300px) and (max-width:500px){
+  
+  .box-1{
+    position:absolute;
+    top:6%;
+    height:45vh;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    font-size: 8px;
+  }
+  .tax-btn{
+    position: absolute;
+    height:3vh;
+    width:30%;
+    right:65%;
+    top:2%;
+    font-size: 10px;
+  }
+  .ur-btn{
+    position: absolute;
+    height:3vh;
+    width:30%;
+    left:65%;
+    top:2%;
+    font-size: 10px;
+  }
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:22%;
+  top:30%;
+  --size: 2rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+ .donateButton{
+    height:30%;
+    width: 90%;
+    /* background-color: aqua; */
+    position: absolute;
+    left:3%;
+    top:55%;
+   
+  }
+  .donateButton button{
+    position: relative;
+    display: block;
+    left:10%;
+    width:80%;
+    height:60%;
+    margin-top:6px ;
+    border-radius: 10px;
+  }
+  .box-2 button{
+    position: absolute;
+    left:55%;
+    top:10%;
+  }
+  #c-btn{
+    position: relative;
+    left:30%;
+  }
+   /* box 5 section  */
+  .img{
+    position: relative;
+    top:80%;
+    left:10%;
+    height:14%;
+    width:70%;
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width:500px) and (max-width:800px){
+  
+  .box-1{
+    position:absolute;
+    top:6%;
+    height:45vh;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    font-size: 8px;
+  }
+  .tax-btn{
+    position: absolute;
+    height:3vh;
+    width:30%;
+    right:65%;
+    top:2%;
+    font-size: 10px;
+  }
+  .ur-btn{
+    position: absolute;
+    height:3vh;
+    width:30%;
+    left:65%;
+    top:2%;
+    font-size: 10px;
+  }
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:25%;
+  top:30%;
+  --size: 3rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+ .donateButton{
+    height:30%;
+    width: 90%;
+    /* background-color: aqua; */
+    position: absolute;
+    left:3%;
+    top:55%;
+   
+  }
+  .donateButton button{
+    position: relative;
+    display: block;
+    left:10%;
+    width:80%;
+    height:60%;
+    margin-top:6px ;
+    border-radius: 10px;
+  }
+  .box-2 button{
+    position: absolute;
+    left:55%;
+    top:10%;
+  }
+  #c-btn{
+    position: relative;
+    left:30%;
+  }
+   /* box 5 section  */
+  .img{
+    position: relative;
+    top:80%;
+    left:10%;
+    height:14%;
+    width:70%;
+    font-size: 8px;
+  }
+}
+@media only screen and (min-width:800px) and (max-width:1100px){
+  
+  .box-1{
+    position:absolute;
+    top:6%;
+    height:45vh;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    font-size: 8px;
+  }
+  .tax-btn{
+    position: absolute;
+    height:4vh;
+    width:25%;
+    right:65%;
+    top:2%;
+    font-size: 10px;
+  }
+  .ur-btn{
+    position: absolute;
+    height:4vh;
+    width:25%;
+    left:65%;
+    top:2%;
+    font-size: 10px;
+  }
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:40%;
+  top:25%;
+  --size: 3rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+ .donateButton{
+    height:30%;
+    width: 90%;
+    /* background-color: aqua; */
+    position: absolute;
+    left:3%;
+    top:55%;
+   
+  }
+  .donateButton button{
+    position: relative;
+    display: block;
+    left:10%;
+    width:80%;
+    height:60%;
+    margin-top:6px ;
+    border-radius: 10px;
+  }
+  .box-2 button{
+    position: absolute;
+    left:65%;
+    top:10%;
+  }
+  #c-btn{
+    position: relative;
+    left:60%;
+  }
+   /* box 5 section  */
+  .img{
+    position: relative;
+    top:70%;
+    left:10%;
+    height:14%;
+    width:70%;
+    font-size: 8px;
+  }
+}
+
+
+@media only screen and (min-width:1100px) and (max-width:2000px){
+  
+  .box-1{
+    position:absolute;
+    top:6%;
+    height:45vh;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+  }
+  .tax-btn{
+    position: absolute;
+    height:4vh;
+    width:25%;
+    right:65%;
+    top:2%;
+    font-size: 10px;
+  }
+  .ur-btn{
+    position: absolute;
+    height:4vh;
+    width:25%;
+    left:65%;
+    top:2%;
+    font-size: 10px;
+  }
+@keyframes growProgressBar {
+  0%, 33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  position: absolute;
+  left:35%;
+  top:25%;
+  --size: 4rem;
+  --fg: #369;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+ .donateButton{
+    height:30%;
+    width: 90%;
+    /* background-color: aqua; */
+    position: absolute;
+    left:3%;
+    top:55%;
+   
+  }
+  .donateButton button{
+    position: relative;
+    display: block;
+    left:10%;
+    width:80%;
+    height:60%;
+    margin-top:6px ;
+    border-radius: 10px;
+  }
+  .box-2 button{
+    position: absolute;
+    left:65%;
+    top:10%;
+  }
+  #c-btn{
+    position: relative;
+    left:60%;
+  }
+   /* box 5 section  */
+  .img{
+    position: relative;
+    top:70%;
+    left:10%;
+    height:14%;
+    width:70%;
+    font-size: 8px;
+  }
+  #top-inf button{
+    position: relative;
+    top:60%;
+    left: 4%;
+    height:5vh;
+    width:60%;
+    background-color: rgb(218, 99, 192);
+    border-radius: 10px;
+  }
+}

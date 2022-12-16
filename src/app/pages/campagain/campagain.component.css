@@ -1,0 +1,431 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html{
+  font-size:62.5%;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg,transparent,skyblue);
+  align-items: center;
+  justify-items: center;
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;   
+} 
+.in-containter{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+.in-containter1{
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  float: left;
+}
+.logo{
+  height: 20%;
+  width: 20%;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+}
+.form{
+  height: 77%;
+  width: 40%;
+  background-color: rgb(234, 240, 239);
+  border-radius: 5%;
+  margin-left: 6%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top:17%;
+  }
+
+
+  #Individual #otpInpuit{
+    left:20%;
+    width: 50%;
+    font-size:1pc;
+    margin:-3% 10%;
+    font-size: 1.2pc;
+    font-weight: bold;
+  }
+.heading{
+  height: 8vh;
+  width: 100%;
+  margin: -1%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.heading h3{
+  bottom: 20%;
+  margin-left:10%;
+    display: block;
+    font-size: 2rem;
+    /* font-weight: bolder; */
+    position: relative;
+    top: 3vh;
+    font-weight: bold;
+}
+#form1{
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  top: 3vh;
+}
+
+#form1 select,#form1 input{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+  outline: none;
+}
+#form1 select{
+  border: none;
+  background-color: rgb(228, 227, 227);
+  border-radius: 1pc;
+  color: black;
+  background-color: rgb(183, 214, 204);
+  left:5%;
+}
+#form1 button{
+  width: 25%;
+  height: 88%;
+  border-radius: 1.5pc;
+  text-align: center;
+  font-size: 1.5pc;
+  font-weight: bold;
+  background-color: greenyellow;
+  margin: 3%;
+}
+#form1 input[type='file']{
+  background: none;
+  text-align: center;
+  border: none;
+}
+/*forrm2 form Here */
+#form select,#form input{
+  width: 50%;
+  height: 7%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+}
+#Individual #number{
+  width: 80%;
+  margin: 0% 1.5%;
+}
+#Individual #btnSubmit{
+  width:20%;
+  height: 5%;
+  outline: none;
+  background-color: rgb(172, 172, 201);
+  font-size: 1.2pc;
+}
+#Individual #enterOtp {
+  float:left;
+  font-size:1pc;
+  margin:-3% 10%;
+  font-size: 1.2pc;
+  font-weight: bold;
+}
+
+#Individual #age{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none; 
+  margin: 0% 2%;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+}
+#Individual #gender{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+  background-color: rgb(201, 221, 214);
+}
+
+#Individual h2{
+  position: relative;
+  margin-top:-2%;
+
+}
+
+#Individual span{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+#NGO span{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+#Social span{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+
+#NGO #age{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none;
+
+  margin: 0% 2%;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+}
+#NGO #gender{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+  background-color: rgb(201, 221, 214);
+}
+#NGO #number{
+  width: 80%;
+  margin: 0% 1.5%;
+}
+#NGO #btnSubmit{
+  width:20%;
+  height: 2%;
+  outline: none;
+  background-color: rgb(172, 172, 201);
+  font-size: 1.2pc;
+}
+#Social #number{
+  width: 57%;
+  margin: 0% 1.5%;
+}
+#Social #btnSubmit{
+  width:20%;
+  height: 2%;
+  outline: none;
+  background-color: rgb(172, 172, 201);
+  font-size: 1.2pc;
+}
+
+#Individual #matInput{
+  width:55%;
+  left:30%;
+  margin: -10% 35% -10%;
+}
+#otpField #enterOtp {
+  float:left;
+  font-size:1pc;
+  margin:1% 10% -10%;
+  font-size: 1.2pc;
+  font-weight: bold;
+}
+
+#otpInpuit{
+  float:right;
+  margin: 1% 15%;
+}
+
+#Social #number{
+  width: 57%;
+}
+#Social #btnSubmit{
+  width:20%;
+  height: 2%;
+  outline: none;
+  background-color: rgb(172, 172, 201);
+  font-size: 1.2pc;
+}
+
+#form2 select{
+  border: none;
+  background-color: rgb(228, 227, 227);
+  border-radius: 1pc;
+  color: black;
+  
+}
+#form2 button{
+  width: 30%;
+  height: 10%;
+  border-radius: 1.5pc;
+  text-align: center;
+  font-size: 2pc;
+  font-weight: bold;
+  background-color: greenyellow;
+  margin: 2%;
+}
+#form2 input[type='file']{
+  background: none;
+  text-align: center;
+  border: none;
+  text-align: center;
+
+}
+/* form3 form here */
+#form3 select,#form3 input{
+  width: 80%;
+  height: 7%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.2pc;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+#form3 select{
+  border: none;
+  background-color: rgb(228, 227, 227);
+  border-radius: 1pc;
+  color: black;
+}
+#form3 button{
+  width: 30%;
+  height: 10%;
+  border-radius: 1.5pc;
+  text-align: center;
+  font-size: 2pc;
+  font-weight: bold;
+  background-color: greenyellow;
+  margin: 5%;
+}
+#form3 input[type='file']{
+  background: none;
+  text-align: center;
+  border: none;
+  text-align: center;
+
+}
+#Form1 span {
+  font-size: 1pc;
+}
+
+.upload{
+  display: flex;
+  box-sizing: border-box;
+}
+.upload span{
+  font-size: 1.5pc;
+  margin-left: 2vw;
+  float: left;
+  color: gray;
+  display: flex;
+  text-align: center;  
+}
+.upload input{
+  margin-left: -1vw;
+}
+.upload h1{
+  margin: 0% 7%;
+}
+.in-containter2{
+  width: 50%;
+  height: 100%;
+  float: left;
+  margin: auto;
+}
+.in-containter2 img{
+  margin-top: 2.5pc;
+  height: 90%;
+  width: 100%;
+  position: relative;
+}
+#form1.checkbox{
+  height: 5%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+ 
+}
+.checkbox label{
+  position: relative;
+  /* margin-left:-5%; */
+  
+  right: 35%;
+  
+}
+.checkbox input[type="checkbox"]{
+  height: 7pc;
+  position: relative;
+  margin-left:-40%;
+
+}
+
+span{
+  z-index: 1000;
+}
+
+/* .cssload-container {
+  content:" Please Select User Type";
+  width: 45%;
+  right: 5%;
+  top: 40%;
+  border-radius: 1.5rem;
+  bottom: 0%;
+  height: 60%;
+  background-color:rgb(221, 37, 166);
+  opacity: 0.9;
+  z-index: 1000;
+} */
+/* display: none; */
+
+.cssload {
+  position: absolute;
+  left: 20%;
+  font-size: bold;
+  top: 30%;
+  width: 50%;
+  color:red;
+  height: 50%;
+  margin: 0 auto;
+  border-radius: 50%;
+  cursor: "plase";
+  position: fixed;
+}
+
+.cursors {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cursors > div {
+  flex: 150px;
+  padding: 10px 2px;
+  white-space: nowrap;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+}
+.cursors > div:hover {
+  background: rgb(238, 238, 238);
+}
+.error{
+color:red;
+margin:0% 1% -1%; 
+}

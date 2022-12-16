@@ -1,0 +1,204 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg,transparent,rgb(81, 128, 144));
+  align-items: center;
+  justify-items: center;
+  display: flex;
+  box-sizing: border-box; 
+  position: absolute; 
+  z-index: 5%;
+  top:0%;
+}
+.in-containter{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+.in-containter1{
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  float: left;
+}
+.logo{
+  height: 25%;
+  width: 25%;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+}
+.moving{
+  position: absolute;
+  top:13%;
+  left:14%;
+  height:8vh;
+  width:75%;
+  background-color: rgb(110, 108, 108);
+  text-align: center;
+  border-radius:15px;
+  align-items: center;
+}
+.moving marquee {
+  margin: 1%;
+  text-align: center;
+  font-size: x-large;
+}
+
+.main{
+  position:relative;
+  margin: 0% 10%;
+  top:30;
+  height: 65%;
+  width: 180%;
+  background-color:rgb(241 239 223);
+  border-radius: 15px;
+}
+.main h2{
+  padding: 1%;
+ font-size: 25px; 
+ text-align: center;
+}
+
+.form{
+  display: flex;
+}
+.form h2{
+   margin-top: 18px;
+   margin-left:30%;
+  display: block;
+  font-size: 35px;
+}
+
+
+
+ .donateFormVisible{
+  position: relative;
+  left: 3%;
+  height: 50vh;
+  width: 50%;
+}
+
+.name .nm{
+  position: relative;
+  left: 15%;
+  font-size: large;
+  
+}
+.name input{
+   width: 75%; 
+   position: relative;
+   left: 20%;
+   border: none;
+  border-bottom: 2px solid black;
+  background-color: rgb(241 239 223);
+  text-align: center;
+  outline: none;
+  font-size: medium;
+}
+
+.email .em{
+  position: relative;
+  left: 16%;
+  font-size: large;
+}
+.email input{
+  width: 75%;
+  position: relative;
+  left: 21%;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: rgb(241 239 223);
+  text-align: center;
+  outline: none;
+  font-size: medium;
+}
+
+.amount .am{
+  position: relative;
+  left: 14%;
+  font-size: large;
+}
+.amount input{
+  width: 75%;
+  position: relative;
+  left: 18%;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: rgb(241 239 223);
+  text-align: center;
+  outline: none;
+  font-size: medium;
+}
+
+.frequency{
+  position: relative;
+  left: 12%;
+  font-size: large;
+}
+.frequency select{
+  width: 75%;
+  position: relative;
+  left: 4%;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: rgb(241 239 223);
+  outline: none;
+  font-size: medium;
+}
+
+.purpose .pr{
+  position: relative;
+  left: 5%;
+  font-size: large;
+}
+.purpose select{
+  width: 75%;
+  position: relative;
+  left: 6%;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: rgb(241 239 223);
+  outline: none;
+  font-size: medium;
+}
+
+.btn{
+  position: relative;
+  left: 50%;
+  top: 8%;
+  width: 20%;
+  height: 5vh;
+  background-color: skyblue;
+  border-radius: 10% / 50%;;
+  text-align: center;
+  border: 1% solid black;
+  font-size:large;
+  font-weight: bold;
+} 
+
+.do-img {
+    height:50vh;
+    width:30%;
+    position: absolute;
+    top:10%;
+  left: 60%;
+}
+
+.do-img img{
+height: 100%;
+width: 100%;
+position: relative;
+/* left:50%; */
+left: 5%;
+}

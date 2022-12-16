@@ -1,0 +1,441 @@
+<div class="container">
+    <div class="in-containter" data-density="hard">
+        <div class="in-containter1">
+            <div class="logo"><img src="assets/k4help.jpg" alt="logo" routerLink="/home"></div>
+            <div class="form">
+                <div class="heading"> 
+                    <h3>Start Campaign</h3>
+                </div>
+                <div class="form-content">
+                    <form id="form1" [formGroup]="campTypesForm">
+                                <div id="Individual" *ngIf="isIndividualFirstDivVisisble"><br>
+                    <!-----  -----  Individual First Form -----    ------>
+                                    <select class="form-select form-select-lg mb-3" (change)="onChange($event)" formControlName="user_type" aria-label=".form-select-lg example">
+                                        <option [value]="" selected> Select User Type </option>
+                                        <option *ngFor="let user Of user_type">{{user.value}}</option> 
+                                      </select>
+                                    <br><br>
+                                <input type="text" formControlName="campaigner_name" minLength="3" placeholder="Campaigner Name" required>
+                                <div class="error" *ngIf="!campaigner_name?.valid && (campaigner_name?.dirty||     campTypesForm?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.minLength">
+                                        Name is required
+                                    </div>
+                                </div>
+                                <br><br>
+
+                                 <input type="text" id="Individual" name="email" formControlName="campaigner_email" placeholder="Campaigner Email" required>
+                                  <div *ngIf="!campaigner_email?.valid && (campaigner_email?.dirty ||campaigner_email?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.email">
+                                      invalid email id
+                                    </div>
+                                  </div><br><br>
+
+
+                                <input type="number" id="number" minLength="10" (keypress)="OnlyNumbersAllowed($event)" formControlName="campaigner_number" placeholder=" Campaigner Mobile" required>
+                                <div class="error" *ngIf="!campaigner_number?.valid && (campaigner_number?.dirty||campaigner_number?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.minLength">
+                                       Enter 10 Digits Mobile Number
+                                    </div>
+                                </div>
+
+                                <button type="button" id="btnSubmit" value="Send OTP" [disabled]="!campaigner_number.valid" (click)="sendOTP()" required>Send OTP</button>
+                                <div id="otpField" *ngIf="isOtpDivVisible">
+                                <label id="enterOtp">Enter OTP</label>
+                                <input type="box" id="matInput" maxLength="4" (keypress)="OnlyNumbersAllowed($event)" formControlName="otp" *ngIf="showOtpComponent">
+                                <div class="error" *ngIf="!otp?.valid && (otp?.dirty||otp?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.required">
+                                        OTP is required
+                                    </div>
+                                 </div>
+                                </div>
+                                <br>
+                                
+                                <div class="checkbox">
+                                    <input type="checkbox" formControlName="term_conditions" required>
+                                    <label><a href="">TERMS AND CONDITION *</a></label>
+                                    <div class="error" *ngIf="!term_conditions?.valid && (term_conditions?.dirty||term_conditions.touched)">
+                                        <div class="error" [hidden]="!term_conditions.errors.required">
+                                            TERMS is required
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <button type="button" [disabled]=!term_conditions.valid (click)="startCampaign(campTypesForm)" (click)="individualNextClick()">NEXT</button>
+                                </div>
+                            </div>
+                            
+              <!--------- ------  Individual Second Form --------  [disabled]=!campTypesForm.valid    ------->
+                            <div id="Individual" *ngIf="isIndividualSecondDivVisisble">
+                                   <select class="form-select form-select-lg mb-3" formControlName="patient_condition" aria-label=".form-select-lg example">
+                                    <option [value]="" selected>Select Patient Conditions </option>
+                                    <option *ngFor="let condition of conditions" [value]="condition.conditions">{{condition.conditions}}</option> 
+                                  </select>
+                                <br><br>
+                                <input type="number" formControlName="required_amount" placeholder="Required Amount">
+                                <div class="error" *ngIf="!required_amount?.valid && (required_amount?.dirty||required_amount?.touched)">
+                                    <div class="error" [hidden]="!required_amount.errors.required">
+                                        Require Amount is required
+                                    </div>
+                                </div><br><br>
+                                <input type="number" formControlName="available_days" placeholder="Available Days">
+                                <div class="error" *ngIf="!available_days?.valid && (available_days?.dirty||available_days?.touched)">
+                                    <div class="error" [hidden]="!available_days.errors.required">
+                                        Available Day is required
+                                    </div>
+                                </div>
+                                <br><br>
+
+                                <div class="upload">
+                                    <span>Medical Document</span>
+                                    <input type="file" formControlName="medical_documents" placeholder="Upload Document" accept="image/*,pdf">
+                                </div>
+                                <div class="error" *ngIf="!medical_documents?.valid && (medical_documents?.dirty||medical_documents?.touched)">
+                                    <div class="error" [hidden]="!medical_documents.errors.required">
+                                        Medical Document is required
+                                    </div>
+                                </div><br><br>
+                                <input type="text" formControlName="description" rows="2" cols="5"
+                                    placeholder="Description">
+                                    <div class="error" *ngIf="!description?.valid && (description?.dirty||description?.touched)">
+                                        <div class="error" [hidden]="!description.errors.required">
+                                            Description is required
+                                        </div>
+                                    </div><br><br>
+                                 <button type="back" (click)="individualBackClick()">BACK</button>
+                                <button type="submit" (click)="individualSecondNextClick()">NEXT</button>
+                            </div>
+                <!--------- ------  Individual Thired Form --------  ------->
+                            <div *ngIf="isIndividualThirdFormVisible" id="Individual">
+                                <h2>Patient Details</h2>
+                                <select class="form-select form-select-lg mb-3" formControlName="campaign_purpose" aria-label=".form-select-lg example">
+                                    <option [value]="" selected>Select Condition </option> 
+                                    <option *ngFor="let medical of value" [value]="medical.value">{{medical.value}}</option>       
+                                  </select>
+                                <br><br>
+                                <input type="text" formControlName="patient_name" minlength="3" placeholder=" Patient Name">
+                                <div class="error" *ngIf="!patient_name?.valid && (patient_name?.dirty||patient_name?.touched)">
+                                    <div class="error" [hidden]="!patient_name.errors.required">
+                                        Patient Name is required
+                                    </div>
+                                    <div class="error" [hidden]="!campTypesForm.errors.minLength">
+                                        Only characters are allowed
+                                    </div>
+                                </div>
+                                <br><br>
+                                <input type="number" id="age" formControlName="patient_age" placeholder="Patient Age">
+                                <div class="error" *ngIf="!campTypesForm.valid && (patient_age?.dirty||patient_age?.touched)">
+                                    <div class="error" [hidden]="!patient_age.errors.required">
+                                        Patient Age is required
+                                    </div>
+                                </div>
+                                <br>
+                                   <select class="form-select form-select-lg mb-3" formControlName="gender" aria-label=".form-select-lg example">
+                                    <option [value]="" selected>Select Gender</option> 
+                                    <option *ngFor="let gender of genders" [value]="gender">{{gender.gender}}</option>       
+                                  </select>
+                                   <br><br>
+                                <input type="text" formControlName="city" placeholder="City">
+                                <div class="error" *ngIf="!city?.valid && (city?.dirty||city?.touched)">
+                                    <div class="error" [hidden]="!city.errors.required">
+                                        City is required
+                                    </div>
+                                </div>
+                                <br><br>
+                                <input type="email" id="email" formControlName="patient_email" placeholder="Patient Email" required>
+                                <div *ngIf="!patient_email.valid && (patient_email.dirty ||patient_email.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.email">
+                                      invalid email id
+                                    </div>
+                                  </div>
+                                <br><br>
+                                <input type="number" formControlName="patient_number" placeholder="Patient Mobile" required>
+                                <div class="error" *ngIf="!patient_number.valid && (patient_number.dirty||patient_number.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.maxLength">
+                                       Enter 10 Digits Mobile Number
+                                    </div>
+                                </div><br><br>
+                                <button type="back" (click)="individualSecondBackClick()">BACK</button>
+                                <button type="button" (click)="individualThirdNextClick()">NEXT</button>    
+                            </div>
+                  <!--------- ------  Individual Fourth Form --------  ------->
+                            <div *ngIf="isIndividualFourthDivVisisble" id="Individual">
+                              <h2> Personal Details</h2><br>
+                              <span for="patient_relation"> Select Relation With Patient </span>
+                                <select formControlName="patient_relation" id="condition" required>
+                                    <option *ngFor="let relation of relations" [value]="relation.relation">{{relation.relation}}</option>    
+                                </select><br><br>
+                                <span for="disease"> Select Desease </span>
+                                <select formControlName="disease" id="condition" required>
+                                    <option *ngFor="let disease of deseases" [value]="disease.disease">{{disease.disease}}</option>
+                                </select><br><br>
+                                <input type="date" id="target_date" formControlName="target_date"
+                                    placeholder="Target Date" required>
+                                    <div class="error" *ngIf="!target_date?.valid && (target_date?.dirty||target_date?.touched)">
+                                        <div class="error" [hidden]="!target_date.errors.required">
+                                            Target date is required
+                                        </div>
+                                    </div><br>
+                                <button type="back" (click)="individualThirdBackClick()" >BACK</button>
+                                <button type="button" (click)="startCampaign(campTypesForm)" routerLink="/dashboard" >Submit</button>  
+                            </div>
+                 <!--------- ------  NGO First Form --------  ------->                 
+                        <div *ngIf="isNgoDivVisisble">
+                            <div *ngIf="isNgoFirstFormVisible" class="form-content1" id="NGO">
+                                <span for="user_type"> Select User Type </span>
+                                <select (change)="onChange($event)"  formControlName="uer_type" id="condition" required>
+                                    <option *ngFor="let user of user_type" [value]="user.value" selected>{{user.value}}</option>     
+                                </select><br><br>
+                                <input type="text" formControlName="campaigner_name" placeholder="Person Name">
+                                <div class="error" *ngIf="!campaigner_name?.valid && (campaigner_name?.dirty||campaigner_name?.touched)">
+                                    <div class="error" [hidden]="!campaigner_name.errors.required">
+                                        Campaigner name is required
+                                    </div>
+                                </div><br><br>
+                                <input type="email" id="email" formControlName="campaigner_email" placeholder="Email" required>
+                                <div class="error" *ngIf="!campaigner_email?.valid && (campaigner_email?.dirty||campaigner_email?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.email">
+                                        Campaigner Email is required
+                                    </div>
+                                </div><br><br>
+                                <input type="number" id="number" formControlName="campaigner_number" placeholder="Campaigner Mobile No." required>
+                                <div class="error" *ngIf="!campaigner_number?.valid && (campaigner_number?.dirty||campaigner_number?.touched)">
+                                    <div class="error" [hidden]="!campaigner_number.errors.required">
+                                        Campaigner Number is required
+                                    </div>
+                                </div>
+                                <button type="button" id="btnSubmit" value="Send OTP" (click)="sendOTP()" required>Send OTP</button><br>
+                                <div id="otpField" *ngIf="isOtpNgoDivVisible">
+                                    <label id="enterOtp">Enter OTP</label>
+                                    <ng-otp-input id="otpInpuit" formControlName="otp" (onInputChange)="onOtpChange($event)" [config]="{length:4}"></ng-otp-input>
+                                    <div class="error" *ngIf="!otp?.valid && (otp?.dirty||otp?.touched)">
+                                        <div class="error" [hidden]="!otp.errors.required">
+                                            OTP is required
+                                        </div>
+                                    </div>
+                                </div><br><br>
+                                <div class="checkbox">
+                                    <input type="checkbox" formControlName="term_conditions" required>
+                                    <label><a href="">TERMS AND CONDITION *</a></label>
+                                </div>
+                                <div class="error" *ngIf="!term_conditions?.valid && (term_conditions?.dirty||term_conditions?.touched)">
+                                    <div class="error" [hidden]="!term_conditions.errors.required">
+                                        TermS & Conditions is required
+                                    </div>
+                                </div>
+                                <button type="button" (click)="startCampaign(campTypesForm)" (click)="ngoNextClick()">NEXT</button>
+                            </div>
+                        </div>
+
+         <!--------- ------  NGO Second Form --------  ------->
+                            <div *ngIf="isNgoSecondFormVisible" id="NGO">
+                                <h2> Patient Details </h2>
+                                <select formControlName="patient_condition" id="condition" required>
+                                    <option >Medical Condition</option>
+                                    <option *ngFor="let medical of value" [value]="medical.value">{{medical.value}}</option>   
+                                </select><br><br>
+                                <input type="text" formControlName="patient_name" placeholder="Name">
+                                <div class="error" *ngIf="!patient_name?.valid && (patient_name?.dirty||patient_name?.touched)">
+                                    <div class="error" [hidden]="!patient_name.errors.required">
+                                        Patient Name is required
+                                    </div>
+                                </div>
+                                <br><br>
+                                <input type="number" id="age" formControlName="patient_age" placeholder="Age">
+                                <div class="error" *ngIf="!patient_age?.valid && (patient_age?.dirty||patient_age?.touched)">
+                                    <div class="error" [hidden]="!patient_age.errors.required">
+                                        Patient Age is required
+                                    </div>
+                                </div>
+                                <br>
+                                <span for="gender"> Select Gender </span>
+                                <select formControlName="gender" id="gender" required>
+                                    <option *ngFor="let gender of genders" [value]="gender">{{gender.gender}}</option>
+                                </select><br><br>
+                                <input type="text" formControlName="city" placeholder="City">
+                                <div class="error" *ngIf="!city?.valid && (city?.dirty||city?.touched)">
+                                    <div class="error" [hidden]="!city.errors.required">
+                                    City is required
+                                    </div>
+                                </div>
+                                <input type="email" id="email" formControlName="patient_email" placeholder="Email" required>
+                                <div class="error" *ngIf="!patient_email?.valid && (patient_email?.dirty||patient_email?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.required">
+                                        Patient Email is required
+                                    </div>
+                                </div><br><br>
+                                <input type="number" formControlName="patient_number" placeholder="Mobile No." required>
+                                <div class="error" *ngIf="!patient_number?.valid && (patient_number?.dirty||patient_number?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.pattern">
+                                        Patient Number is required
+                                    </div>
+                                </div>
+                                <br><br>
+                                <button type="back" (click)=" ngosecondBackClick()">BACK</button>
+                                <button type="button" (click)="ngoSecondNextClick()">NEXT</button>    
+                            </div>
+
+                         <!--------- ------  NGO Thired Form --------  ------->
+                            <div *ngIf="isNgoThirdFormVisible" id="NGO3">
+                                <h2> Personal Details</h2><br>
+                                <span for="patient_relation"> Select Relation With Patient  </span>
+                                <select formControlName="patient_relation" id="condition" required>
+                                    <option *ngFor="let relation of relations" [value]="relation.relation">{{relation.relation}}</option>    
+                                </select>
+                                <div class="error" *ngIf="!patient_relation.valid && (patient_relation.dirty||patient_relation.touched)">
+                                    <div class="error" [hidden]="!patient_relation.errors.required">
+                                        Patient Relation is required
+                                    </div>
+                                </div><br><br>
+                                    <span for="disease"> Select Desease  </span>
+                                <select formControlName="disease" id="condition" required>
+                                    <option *ngFor="let disease of deseases" [value]="disease.disease">{{disease.disease}}
+                                    </option>
+                                </select><br><br>
+                                <input type="date" id="target_date" formControlName="target_date"
+                                    placeholder=" Raise Goal Amount by date" required>
+                                    <div class="error" *ngIf="term_conditions?.valid && (term_conditions.dirty||term_conditions.touched)">
+                                        <div class="error" [hidden]="!term_conditions.errors.required">
+                                            Term & Conditions is required
+                                        </div>
+                                    </div><br><br>
+                                <button type="back" (click)=" ngoFirsrBackClick()" >BACK</button>
+                                <button type="back" (click)="ngoThirdNextClick()">NEXT</button>  
+                            </div>
+
+                 <!--------- -----------  NGO Fourth Form --------  ------------>
+                            <div *ngIf="isNgoFourthFormVisible" class="form-content" id="NGO">
+                                <input type="text" formControlName="ngo_name" placeholder="NGO Name">
+                                <div class="error" *ngIf="ngo_name.valid && (ngo_name.dirty||ngo_name.touched)">
+                                    <div class="error" [hidden]="!ngo_name.errors.required">
+                                        NGO Name is required
+                                    </div>
+                                </div><br><br>
+                                <input type="textarea" id="ngo_description" formControlName="ngo_description" placeholder="NGO Description"
+                                    required>
+                                    <div class="error" *ngIf="ngo_description.valid && (ngo_description.dirty||ngo_description.touched)">
+                                        <div class="error" [hidden]="!ngo_description.errors.required">
+                                            About NGO is required
+                                        </div>
+                                    </div><br><br>
+
+                                <span for="tax_benifit"> Choose Tax Benefits  </span>
+                                <select formControlName="tax_benifit" id="condition" required>
+                                    <option *ngFor="let tax of taxs" [value]="tax.options">{{tax.options}}</option>  
+                                </select><br><br>
+                                <span for="under_section"> Select Section  </span>
+                                <select formControlName="under_section" id="condition" required>
+                                    <option *ngFor="let section of sections" [value]="section.section">{{section.section}}</option>
+                                </select><br><br>
+                                <button type="back" (click)="ngoBackClick()" >Back</button>
+                                <button type="button" (click)="startCampaign(campTypesForm)" routerLink="/dashboard-ngo">SUBMIT</button>
+                            </div>
+
+             <!--------- ------  Social Activist First Form --------  ------->
+
+                        <div id="Social" *ngIf="isSocialDivVisible">
+                            <div *ngIf="isSocialFirstFormVisible" class="form-content2" id="Social">
+                                <span for="user_type"> Select User Type </span>
+                                <select (change)="onChange($event)" formControlName="user_type" id="condition" required>
+                                    <option *ngFor="let user of user_type" selected [value]="user.value">{{user.value}}</option>
+                                </select><br><br>
+                                <input type="text" formControlName="campaigner_name" placeholder="Person Name">
+                                <div class="error" *ngIf="campaigner_name?.valid && (campaigner_name?.dirty||campaigner_name?.touched)">
+                                    <div class="error" [hidden]="!campaigner_name.errors.required">
+                                       Name is required
+                                    </div>
+                                </div><br><br>
+
+                                <input type="email" id="email" formControlName="campaigner_email" placeholder="Email" required>
+                                <div class="error" *ngIf="campaigner_email?.valid && (campaigner_email.dirty||campaigner_email?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.email">
+                                        invalid email id
+                                    </div>
+                                </div><br><br>
+                                <input type="text" id="number" formControlName="campaigner_number" placeholder="Mobile No." required>
+                                <div class="error" *ngIf="campaigner_number?.valid && (campaigner_number?.dirty||campaigner_number?.touched)">
+                                    <div class="error" [hidden]="!campTypesForm.errors.required">
+                                        Term & Conditions is required
+                                    </div>
+                                </div><br>
+                                <button type="button" id="btnSubmit" value="Send OTP" (click)="sendOTP()" required>Send OTP</button><br>
+                                <div id="otpField" *ngIf="isOtpSocialDivVisible">
+                                    <label id="enterOtp">Enter OTP</label>
+                                    <ng-otp-input id="otpInpuit" fromControlName="otp" (onInputChange)="onOtpChange($event)" [config]="{length:4}"></ng-otp-input><br>
+                                </div>
+                                <div class="error" *ngIf="!otp?.valid && (otp?.dirty||otp?.touched)">
+                                    <div class="error" [hidden]="!otp.errors.required">
+                                        OTP is required
+                                    </div>
+                                </div><br><br>
+                                <div class="checkbox">
+                                    <input type="checkbox" formControlName="termcondition" required>
+                                    <label>TERMS AND CONDITION *</label>
+                                </div>
+                                <button type="button" (click)="startCampaign(campTypesForm)" 
+                                (click)="socialNextClick()">NEXT</button>
+                            </div>
+                        </div>
+
+                    <!--------- ------  Social Activist Second Form --------  ------->
+                            <div *ngIf="isSocialSecondFormVisible" id="Social" >
+                                <span for="patient_condition"> Select Patient Condition </span>
+                                <select formControlName="patient_condition" name="patient_condition" id="condition" required>
+                                    <option *ngFor="let condition of conditions" [value]="condition.conditions">{{condition.conditions}}</option>
+                                </select><br><br>
+                                <input type="number" formControlName="required_amount" placeholder="Required Amount">
+                                <div class="error" *ngIf="!required_amount?.valid && (required_amount?.dirty||required_amount?.touched)">
+                                    <div class="error" [hidden]="!required_amount.errors.required">
+                                    Require Amount is required
+                                    </div>
+                                </div><br><br>
+                                <input type="number" formControlName="available_days" placeholder="Available Days">
+                                <div class="error" *ngIf="!available_days?.valid && (available_days?.dirty||available_days?.touched)" title="">
+                                    <div class="error" [hidden]="!available_days.errors.required">
+                                    Available Days is required
+                                    </div>
+                                </div><br><br>
+                                <div class="upload">
+                                    <h1>Medical Document</h1>
+                                    <input type="file" formControlName="medical_document" placeholder="Upload Document"
+                                        accept="image/*,pdf">
+                                </div>
+                                <div class="error" *ngIf="!medical_document?.valid && (medical_document?.dirty||medical_document?.touched)">
+                                    <div class="error" [hidden]="!medical_document.errors.required">
+                                    Medical Document is required
+                                    </div>
+                                </div>
+                                <br><br>
+                                <input type="textarea" formControlName="description" placeholder="Description">
+                                <div class="error" *ngIf="!description?.valid && (description?.dirty||description?.touched)">
+                                    <div class="error" [hidden]="!description.errors.required">
+                                          Description is required
+                                    </div>
+                                </div>
+                                <br><br>
+                                <button type="back" (click)="socialBackClick()">BACK</button>
+                                <button type="submit" (submit)="startCampaign(campTypesForm)" routerLink="/dashboard-social-activist">SUBMIT</button>
+        
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="in-containter2">
+            <img src="assets/do.jpg" alt="patient1">
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showLoader" class="cssload-container">  
+ <div class="cursor">
+    <div class="cssload" *ngIf="!textarea?.valid && (textarea?.dirty||textarea?.touched)">  
+            Please Select User Type
+    </div>
+</div>
+</div>
+
+
+
+
+<app-loader></app-loader> 
+

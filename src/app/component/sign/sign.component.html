@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="in-containter" data-density="hard">
+        <div class="in-containter1">
+            <div class="logo"><img src="assets/k4help.jpg" alt="logo" routerLink="/home"></div>
+            <div class="form">
+                <div class="heading">
+                    <h1>Sign up/in</h1>
+                </div>
+                <div class="form-content md-2">
+                    <br>
+                  <form [formGroup]="userForm" autocomplete="off">
+                                <mat-form-field>
+                                    <input matInput placeholder="Name" formControlName="campaigner_name" />
+                                </mat-form-field>
+                                <br />
+                                <mat-form-field>
+                                    <input matInput type="text" class="form-control" formControlName="campaigner_email" name="email"
+                                    placeholder="Email" required />
+                                </mat-form-field>
+                                <br/>
+                                <mat-form-field >
+                                    <input type="number" matInput class="form-control"  name="number" formControlName="campaigner_number" placeholder="Mobile No." required>
+                                </mat-form-field>
+                                <br>
+                                <button type="button" color="primary" (click)="sendOTP(campaigner_email)"  mat-raised-button> Send OTP </button>
+                                <br>
+                                <mat-form-field *ngIf="isOtpDivVisible">
+                                    <input matInput type="number" maxLength="4" (keypress)="OnlyNumbersAllowed($event)" formControlName="otp" placeholder="OTP." required>
+                                </mat-form-field>
+                                
+                                <br>
+                            <button type="button" color="warn" [disabled]="!userForm.valid" (ngSubmit)="onSignupSubmit()" routerLink="/dashboard" mat-raised-button> NEXT </button>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="in-containter2">
+            <img src="assets/do.jpg" alt="patient1">
+        </div>
+    </div>
+</div>
+<app-loader></app-loader> 
+
+
+
+
+
+
+
+<!--                          
+<div *ngIf="isLoggedIn; else loggedOut">
+  Welcome back, friend.
+</div>
+
+<ng-template #loggedOut>
+  Please friend, login.
+</ng-template>
+
+<ng-container
+  *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+</ng-container> </div> -->

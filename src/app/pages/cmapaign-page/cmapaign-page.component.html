@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="logo"><img src="" alt="logo" routerLink="/home"></div>
+    <div class="in-containter">
+        <div class="box-1">
+            <div class="box-1-1">
+                <div class="box" id="f-raised">
+                    Fund Raised
+                    <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="--value:100"></div>
+                </div>
+                <div  class="donateButton">
+                    <button class="btn btn-success">Donate Now</button>
+                    <button id="s-btn">Share Now</button>
+                </div>
+            </div>
+            <div class="box" id="img-vid">Image/Video
+               <div class="btn-img">
+                <button class="tax-btn"><p>TAX BENEFITS</p></button>
+                <button class="ur-btn"><p>URGENT</p></button>
+               </div>
+
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="box" id="c-details">
+              Text
+              <button id="c-btn">Verified</button>
+            </div>
+            <div class="box" id="A-details">
+                Account Details
+              <button id="a-btn">Verified</button>
+            </div>
+            <div class="box" id="upi"> Donate via Paytm googlepay or Phone pe</div>
+        </div>
+        <div class="box-3">
+            <div class="box" id="txt-img">Text and Images</div>
+            <div class="box" id="top-inf">
+                 Top Influencers
+                 <button>Donate Now</button>
+                </div>
+           
+        </div>
+    <div class="box-4">
+        <div class="st">
+        <div class="box" id="story">Story</div>
+        </div>
+        <div class="cons">
+        <div class="box" id="l-donners"> List of Donners</div>
+        <div class="box" id="v-donner">Value no.1 no. of Donners</div>
+        <div class="box" id="c-value">Fetch the cause Value</div>
+        </div>
+    </div>
+    <div class="box-5">
+        <div class="box" id="img1">
+            <!-- <input type="file"  id="image-1" class="img" accept="image/png, image/jpg" placeholder="image">  -->
+            <img [src]="url" height="120vh" width="100%" >
+            <input type="file" (change)="onselectFile($event)">
+        </div> 
+
+
+        <div class="box" id="img2">
+            <!-- <input type="file"  id="image-2" class="img" accept="image/png, image/jpg" placeholder="image"> -->
+            <img [src]="url" height="120vh" width="100%" >
+            <input type="file" (change)="onselectFile($event)">
+        </div>
+        <div class="box" id="img3">
+            <!-- <input type="file" id="image-3" class="img" accept="image/png, image/jpg" placeholder="image"> -->
+            <img [src]="url" height="120vh" width="100%" >
+            <input type="file" (change)="onselectFile1($event)">
+        </div>
+        <div class="box" id="img4">
+            <!-- <input type="file" id="image-4" class="img" accept="image/png, image/jpg" placeholder="image"> -->
+            <img [src]="url" height="120vh" width="100%" >
+            <input type="file" (change)="onselectFile($event)">
+        </div>
+    </div>
+    <div class="box-6">
+        <div class="box" id="d-bank">
+        Donate via Bank
+            
+            
+        </div>
+        <div class="box-7">
+            <div class="box" id="updates">
+                Updates
+                <h3>Text fetch from dashboard</h3>
+    
+            </div>
+     </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

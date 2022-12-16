@@ -1,0 +1,184 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html{
+  font-size: 62.5;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  align-items: center;
+  justify-items: center;
+  display: flex;
+  box-sizing: border-box; 
+  position: absolute; 
+  z-index: 5%;
+}
+.logo{
+  position: absolute;
+  height: 13vh;
+  width: 10%;
+  top:2%;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+    /* border: 2px solid rgb(207, 42, 42); */
+    height: 100%;
+    width: 10%;
+    padding:top;
+    border-radius: 1rem;
+    margin: 0% 0% 1rem;
+    position: fixed;  
+  }
+  .logo{
+    width: 10%;
+    height: 20vh;
+    /* background-color: aqua; */
+
+  }
+  .Logo img {
+    height: 40vh;
+    width:100%;
+    
+  }
+  .moving{
+    position:absolute;
+    top:15%;
+    left:16%;
+    height:8vh;
+    width:70%;
+    background-color: rgb(110, 108, 108);
+    text-align: center;
+    border-radius:15px;
+    align-items: center;
+  }
+  .moving marquee {
+    margin: 1%;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  .left{
+    height:30vh;
+    width:60%;
+    display: inline-block;
+    position: absolute;
+    top:25%;
+    left:2%;
+    box-sizing: border-box;
+  }
+  .form{
+    background-color: rgb(212, 217, 221);
+    width: 70%;
+    height: 60vh;
+    z-index: 1;
+    top:30%;
+    left:16%;
+    border-radius: 1rem;
+    position: absolute;
+  }
+  .form h2{
+     margin-top: 18px;
+     margin-left:30%;
+    display: block;
+    font-size: 35px;
+  }
+    .left input{
+      height:3vh;
+      width:25vw;
+      margin-top: 5px;
+      border:none;
+      border-bottom: 3px solid black;
+      background-color: rgb(212, 217, 221);
+      position: relative;
+      left:25%;
+      outline: none;
+    }
+    .left select{
+      height:3vh;
+      width:25vw;
+      margin-top: 8px;
+      border:none;
+      border-bottom: 3px solid black;
+      background-color: rgb(212, 217, 221);
+      position: relative;
+      left:19%;
+      text-align: center;
+      outline: none;
+    }
+    .left label{
+      font-size: 20px;
+    }
+   .nam label{
+     position: relative;
+     left:12%;
+     margin: 2%;
+   }
+
+   .nam input {
+    left:20.5%;
+    margin: 1%;
+
+   }
+
+   .mail label{
+    position: relative;
+    left:13%;
+    margin: 1%;
+  }
+
+  .mail input {
+    left:24%;
+   }
+
+  .am label{
+    position: relative;
+    left:10%;
+    margin: 1%;
+  }
+  .am input {
+    left:20%;
+    text-align: center;
+   }
+
+  .pur select{
+    position: relative;
+    left: 4%;
+    margin: 2%;
+  }
+  .pur select {
+    left:6%;
+   }
+  .btn{
+    position: relative;
+    top:70%;
+    left:50%;
+    height:5vh;
+    width:10vw;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: rgb(115, 172, 172);
+  }
+  /* right box Css*/
+  .right{
+    height:40%;
+    width:40%;
+    top:0%;
+    left:100%;
+    position: absolute;
+  }
+  .right img{
+    background-size: cover;
+    height:40vh;
+    width:22vw;
+
+  }
+
