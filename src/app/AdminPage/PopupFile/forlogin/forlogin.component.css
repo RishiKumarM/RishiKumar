@@ -1,0 +1,16 @@
+.newaccountform{
+  height: auto;
+  width: 100%;
+}
+#nextext{
+  position: relative;
+  left:5%;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 3%;
+}
+#nextButon{
+  position: relative;
+  left:20%;
+  margin: 1% 5% 0%;
+}

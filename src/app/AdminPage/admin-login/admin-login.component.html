@@ -1,0 +1,27 @@
+<div class="banner">
+  <div class="monthsTab">
+  <h3 class="yearsPln">Yearly Plans</h3>
+  <label class="switch">
+    <form class="example-form" [formGroup]="formGroup" (ngSubmit)="onFormSubmit(formGroup.value)" ngNativeValidate>
+    <mat-slide-toggle color="warn" formControlName="changePlan" ></mat-slide-toggle>
+  </form>
+  {{ formGroup.status }}
+  <!-- <p>You have changed in: {{ formGroup.status }}</p> -->
+</label>
+  <h3 class="monthPln">Monthly Plans</h3>
+  </div>
+  <div class="structure"> 
+      <div class="planSelect" *ngFor="let plan of amountPlan"> 
+        <div class="planTab">
+            <h3>Package Name</h3>
+            <h1 id="h1Text">${{plan.amount}}<span>/ {{plan.option}}</span></h1>
+            <button mat-raised-button color="primary" id="contactButton" type="button" (click)="onClick($event,plan.amount, plan.option)"> Start Now </button>
+           <div class="divider"></div>
+           <ol *ngFor="let plan of plans">
+           <mat-icon class="matIcon">check_circle</mat-icon><span>{{plan.options}}</span>
+           </ol>
+        </div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

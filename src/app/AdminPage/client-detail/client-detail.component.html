@@ -1,0 +1,79 @@
+<div class="banner">
+  <div class="navBar">
+    
+  </div>
+  <div class="navBarDesign">
+    
+  </div>
+  <div class="container">
+    <div class="businesForm" id="clientRegistration">
+          <form [formGroup]="clientForm" class="example-form">
+              <div class="contact" id="isContactFormVisible" *ngIf="isContactFormVisible">
+              <h2>Contact Details</h2>
+              <input type="hidden" formControlName="adminId" readonly>
+              <mat-form-field>
+                <input matInput type="text" minlength="3" (keypress)="letterOnly($event)" placeholder="Name" formControlName="clientName" id="myName" required>
+                <mat-error *ngIf="myError('clientName', 'required')">Please fill your name</mat-error>
+                <mat-error *ngIf="myError('clientName', 'minlength')">Please enter a valid Name</mat-error>
+            </mat-form-field>
+            
+              <mat-form-field id="clientNumber">
+                  <input matInput type="tel" minlength="10" maxlength="10" (keypress)="OnlyNumbersAllowed($event)" placeholder="Number" formControlName="clientNumber" id="myNumber" required>
+                  <mat-error *ngIf="myError('clientNumber', 'pattern')">Please enter a valid Number</mat-error>
+                  <mat-error *ngIf="myError('clientNumber', 'required')">Please fil the mobile number</mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field id="clientAddress">
+                  <input matInput type="text" minlength="5" placeholder="Address" formControlName="clientAddress" id="myNumber" required>
+                  <mat-error *ngIf="myError('clientAddress', 'pattern')">Please enter a valid Number</mat-error>
+                  <mat-error *ngIf="myError('clientAddress', 'required')">Please fil the mobile number</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field id="clientCity">
+                <input matInput aria-label="City" [matAutocomplete]="auto" formControlName="clientCity" placeholder="City" required>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let city of filteredCities | async" [value]="city.name">
+                        <span>{{city.name}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="myError('clientCity', 'required')">Please choose a city</mat-error>
+            </mat-form-field>
+            <br>
+              <mat-form-field id="clientState">
+                <input matInput aria-label="State" [matAutocomplete]="auto" formControlName="clientState" placeholder="State" (keypress)="letterOnly($event)" required>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                        <span>{{state.name}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="myError('clientState', 'required')">Please choose a state</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field id="clientCountry">
+                <input matInput aria-label="State" [matAutocomplete]="auto" formControlName="clientCountry" placeholder="Country" (keypress)="letterOnly($event)" required>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
+                        <span>{{country.name}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="myError('clientCountry', 'required')">Please choose a Country</mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field id="zipCode">
+                <input type="text" matInput formControlName="gstin" maxlength="15"
+                   placeholder="GSTIN" required>
+                    <mat-error *ngIf="myError('gstin', 'required')">Enter Your GST Number </mat-error>
+            </mat-form-field> 
+              <mat-form-field id="zipCode">
+                <input type="tel" matInput formControlName="zipCode" maxlength="6"
+                    (keypress)="OnlyNumbersAllowed($event)" placeholder="Pin/Zip Code" required>
+                    <mat-error *ngIf="myError('clientState', 'required')">Enter Your Area Zip Code</mat-error>
+            </mat-form-field> 
+              <br>
+              <button mat-raised-button color="primary" id="backButton" type="submit" 
+              (click)="onUpdate($event, clientForm)"> NEXT </button>
+              </div>
+      </form>
+    </div>
+  </div>
+  </div>

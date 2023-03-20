@@ -1,0 +1,14 @@
+<div class="newaccountform">
+  <form [formGroup]="otpForm">
+    <h2 id="nextext">OTP has been send to your Email</h2>
+    <mat-form-field>
+        <input matInput formControlName="otp" minlength="6" maxlength="6" (keypress)="OnlyNumbersAllowed($event)" placeholder="Enter OTP" id="myOtp" required>
+        <mat-error *ngIf="myError('otp', 'required')">OTP is required</mat-error>
+        <mat-error *ngIf="myError('otp', 'minlength')">Enter Valid OTP</mat-error>
+    </mat-form-field>
+    <br>
+
+    <button mat-raised-button color="green" id="nextButon" (click)="sentOTP($event, otpForm)" cdkFocusInitial [mat-dialog-close]="true"> ReSend OTP</button>
+    <button mat-raised-button color="primary" id="nextButon" [disabled]="!otpForm.valid" (click)="verify($event, otpForm)" cdkFocusInitial [mat-dialog-close]="true"> Verify </button>
+</form>
+</div>

@@ -1,0 +1,251 @@
+.banner{
+  width: 100%;
+  height: 100vh;
+  font-family: Lato;
+ 
+  }
+  
+  .navBar{
+    position: absolute;
+    width:26%;
+    height: 100vh;
+    background-color: rgb(33, 9, 212);
+    left:0%;
+  
+  }
+  .navBarDesign{
+    position: absolute;
+    width:80%;
+    height: 100vh;
+    background-color: #def1eefa;
+    left:20%;
+    border-start-start-radius: 5rem; 
+    border-bottom-left-radius: 5rem;
+  }
+  .structure{
+    position: relative;
+    width:100%;
+    height: 90vh;
+    left:0%;
+  
+  }
+  .planTab{
+    position: relative;
+    color: rgb(10, 9, 9);
+    border-radius: 2rem;
+    top:5%;
+    text-emphasis-color: aliceblue;
+  }
+  .planTab:hover{
+    position: relative;
+    background-color: rgb(30, 53, 234);
+    border: 1px solid black;
+    border-radius: 2rem;
+    top:5%;
+    text-emphasis-color: aliceblue;
+    color: white;
+    text-emphasis-color:white;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .structure h2{
+    position: absolute;
+    left:30%;
+  }
+  
+  .companySetup{
+    position: relative;
+    left:5%;
+    height: 6.5vh;
+    width: 90%;
+    font-weight: bolder;
+    /* background-color: blueviolet; */
+  }
+  .planSelect{
+    position: relative;
+   float: left;
+   left:1.5%;
+    padding-right: 0%;
+    padding-bottom:0%;
+    height: auto;
+    width: 30%;
+    border-radius: 2rem;
+    font-weight: normal;
+    background-color: rgb(248, 248, 245);
+    margin:1% 1% 1% 1.5%;
+  }
+
+  .planSelect h3{
+    position: relative;
+    left:5%;
+    padding-top: 5%;
+    padding-left: 15px;
+    font-size: x-large;
+    font-weight: bolder;
+  }
+  .planSelect h1,h4{
+    position: relative;
+    left:5%;
+    padding-left: 15px;
+    font-size: xx-large;
+    font-weight: bolder;
+    color:  green;
+  }
+  .planSelect .matIcon{
+    position: absolute;
+    margin: 1% -1%;
+    text-align: justify;
+    font-size: small;
+    font-weight: bold;
+    color:  green;
+  }
+  .planSelect span{
+    position: relative;
+    margin: -1%;
+    padding-left: 5%;
+    font-size: small;
+    font-weight: bold;
+    color: black;
+  }
+  .planSelect button{
+    position: relative;
+    left:25%;
+    height: 7vh;
+    width: 10vw;
+    top: 60%;
+    border-radius: 0.8rem;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-weight: bold;
+    background-color: green;
+    color: rgb(247, 249, 247);
+  }
+  .planSelect button:hover{
+    position: relative;
+    left:25%;
+    height: 7vh;
+    width: 10vw;
+    top: 60%;
+    border-radius: 0.8rem;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    font-size: medium;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    color: rgb(13, 178, 13);
+  }
+
+  .companySetup #flexCheckDefault{
+    position: relative;
+    left: 50%;
+    font-weight: bolder;
+  }
+
+  #contactButton {
+    width: 85%;
+    margin: 5px;
+    left:7%;
+  }
+  #contactButton:hover {
+    width: 85%;
+    font-weight: bolder;
+    background-color: azure;
+    color: black;
+    margin: 5px;
+  }
+  .divider{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    border: 1px solid black;
+  }
+
+  .monthsTab{
+    height: 12vh;
+    width: 100%;
+    padding-top: 2px;
+  }
+
+  .monthsTab .yearsPln{
+    width: 15%;
+    position: absolute;
+    left: 30%;
+    top:14%;
+    font-size: x-large;
+    font-family: Lato;
+    
+  }
+  .monthsTab .monthPln{
+    width: 15%;
+    position: absolute;
+    left: 55%;
+    top:14%;
+    font-size: x-large;
+    font-family: Lato;
+    
+  }
+  .monthsTab .switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left:46%;
+    top:15%;
+  }
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(35, 51, 228);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 25px;
+    left: 4px;
+    bottom: 4px;
+    background-color: green !important;
+    -webkit-transition: .4s;
+    transition: .4s !important;
+  }
+  
+  input:checked + .slider {
+    background-color: transparent;
+    border:1.3px solid black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px) !important;
+    -ms-transform: translateX(26px) !important;
+    transform: translateX(26px) !important;
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px !important;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

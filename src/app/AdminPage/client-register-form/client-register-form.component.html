@@ -1,0 +1,41 @@
+<div class="banner">
+<div class="navBar">
+  
+</div>
+<div class="navBarDesign">
+  
+</div>
+<div class="container">
+  <div class="businesForm" id="clientRegistration">
+    <form [formGroup]="clientForm" class="example-form">
+        <div *ngIf="isClientFormVisible">
+          
+          <h1>Business Information</h1>
+          <br>
+            <mat-form-field>
+                <input matInput type="text" minlength="3" (keypress)="letterOnly($event)" placeholder="Business Name" formControlName="businessName" id="myName" required>
+                <mat-error *ngIf="myError('businessName', 'required')">Please fill your name</mat-error>
+                <mat-error *ngIf="myError('businessName', 'pattern')">Please enter a valid Name</mat-error>
+              </mat-form-field>
+              <br>
+            <mat-form-field>
+                <input matInput type="email" formControlName="businessEmail" placeholder="Business Email" required>
+                <mat-error *ngIf="myError('businessEmail', 'required')">Please fill the email address</mat-error>
+                <mat-error *ngIf="myError('businessEmail', 'pattern')">Please enter a valid Email address</mat-error>
+            </mat-form-field>
+            <br>
+            <input type="hidden" formControlName="otp" readonly>
+            <mat-form-field>
+                <input matInput placeholder="Selected Plan" disabled>
+                ${{amountPlan}}/{{planType}}
+            </mat-form-field>
+            <br>
+            <button *ngIf="OTPButton" mat-raised-button color="primary" id="nextButton" type="submit" (click)="sendOTPwithData(clientForm)" id="toggle-linear"> Verify Email </button>
+            <button *ngIf="SubmitButton" mat-raised-button color="primary" id="nextButton" type="submit" (click)="submit($event, clientForm)" id="toggle-linear"> NEXT </button>
+            <br>
+            
+        </div>
+    </form>
+  </div>
+</div>
+</div>
