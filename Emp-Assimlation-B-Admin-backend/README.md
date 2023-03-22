@@ -1,2 +1,0 @@
-# BEA-Backend
-BAB
